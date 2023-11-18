@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HKGrotesk-SemiBoldLegacy.otf">
+            <string>HKGrotesk-SemiBoldLegacy</string>
+        </array>
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AccountCell" customModule="Authenticator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="255"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="330" height="255"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Y6R-rb-uBo">
+                        <rect key="frame" x="0.0" y="0.0" width="330" height="255"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="uqw-wB-EcO">
+                                <rect key="frame" x="19" y="83" width="284" height="55.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="333" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QD-fW-mbY">
+                                        <rect key="frame" x="0.0" y="14.999999999999998" width="33" height="25.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="18"/>
+                                        <color key="textColor" name="ultramarineBlue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91a-2K-3pB">
+                                        <rect key="frame" x="36" y="14.999999999999998" width="9.3333333333333357" height="25.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="18"/>
+                                        <color key="textColor" name="graygray"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="333" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVp-7i-jQn">
+                                        <rect key="frame" x="48.333333333333329" y="14.999999999999998" width="235.66666666666669" height="25.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="18"/>
+                                        <color key="textColor" name="ultramarineBlue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Vj5-dk-Eyz">
+                                <rect key="frame" x="19" y="158.33333333333334" width="284" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="GZ6-ep-UzX"/>
+                                </constraints>
+                                <color key="progressTintColor" name="graygray"/>
+                                <color key="trackTintColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </progressView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kKO-Gk-wZx">
+                                <rect key="frame" x="19" y="182.33333333333334" width="284" height="29.666666666666657"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao2-jt-3sG">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="17"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOi-33-Ogf">
+                                        <rect key="frame" x="0.0" y="17" width="24.666666666666668" height="12.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="9"/>
+                                        <color key="textColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <edgeInsets key="layoutMargins" top="24" left="19" bottom="9" right="27"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="viewBorderColor">
+                                <color key="value" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="viewBorderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusInspec">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </stackView>
+                    <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0p-gX-FkW">
+                        <rect key="frame" x="108" y="111" width="114" height="33.333333333333343"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The code is copied!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cj-m8-wCt">
+                                <rect key="frame" x="10" y="10" width="94" height="13.333333333333336"/>
+                                <fontDescription key="fontDescription" name="HKGrotesk-SemiBoldLegacy" family="HK Grotesk" pointSize="11"/>
+                                <color key="textColor" name="ultramarineBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29803921568627451" green="0.43529411764705883" blue="1" alpha="0.19932504251700681" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3cj-m8-wCt" firstAttribute="top" secondItem="u0p-gX-FkW" secondAttribute="top" constant="10" id="Jed-mW-IdI"/>
+                            <constraint firstAttribute="trailing" secondItem="3cj-m8-wCt" secondAttribute="trailing" constant="10" id="XU0-GN-nCC"/>
+                            <constraint firstItem="3cj-m8-wCt" firstAttribute="leading" secondItem="u0p-gX-FkW" secondAttribute="leading" constant="10" id="dvh-Rs-eax"/>
+                            <constraint firstAttribute="bottom" secondItem="3cj-m8-wCt" secondAttribute="bottom" constant="10" id="zOD-af-SaI"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusInspec">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Y6R-rb-uBo" secondAttribute="bottom" id="A8B-vf-7ID"/>
+                <constraint firstItem="Y6R-rb-uBo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="E9V-7t-SgT"/>
+                <constraint firstItem="Y6R-rb-uBo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GQG-g9-Mf9"/>
+                <constraint firstItem="u0p-gX-FkW" firstAttribute="centerY" secondItem="Y6R-rb-uBo" secondAttribute="centerY" id="JG6-jc-GBd"/>
+                <constraint firstAttribute="trailing" secondItem="Y6R-rb-uBo" secondAttribute="trailing" id="hrA-8n-Qnk"/>
+                <constraint firstItem="u0p-gX-FkW" firstAttribute="centerX" secondItem="Y6R-rb-uBo" secondAttribute="centerX" id="j3Z-vv-P3V"/>
+            </constraints>
+            <size key="customSize" width="330" height="255"/>
+            <connections>
+                <outlet property="accountName" destination="Ao2-jt-3sG" id="BMw-tL-86w"/>
+                <outlet property="code1Label" destination="3QD-fW-mbY" id="xW1-ay-zpA"/>
+                <outlet property="code2Label" destination="oVp-7i-jQn" id="rxo-4n-VJe"/>
+                <outlet property="contactLabel" destination="cOi-33-Ogf" id="4hM-wM-mg4"/>
+                <outlet property="containerStackView" destination="Y6R-rb-uBo" id="Kji-0T-FS8"/>
+                <outlet property="copiedToastView" destination="u0p-gX-FkW" id="qqC-TV-c8w"/>
+                <outlet property="progressView" destination="Vj5-dk-Eyz" id="TCQ-vd-T5D"/>
+            </connections>
+            <point key="canvasLocation" x="352.67175572519085" y="91.901408450704224"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="graygray">
+            <color red="0.72941176470588232" green="0.72941176470588232" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ultramarineBlue">
+            <color red="0.29803921568627451" green="0.43529411764705883" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

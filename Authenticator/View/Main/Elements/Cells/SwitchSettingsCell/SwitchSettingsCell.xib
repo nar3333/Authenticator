@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="163" id="KGk-i7-Jjw" customClass="SwitchSettingsCell" customModule="Authenticator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="503" height="163"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="503" height="163"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BWb-cT-gOd">
+                        <rect key="frame" x="13" y="65" width="465" height="33"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="Af7-xC-RdK">
+                                <rect key="frame" x="0.0" y="4.6666666666666714" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="QQf-1S-G5G"/>
+                                    <constraint firstAttribute="height" constant="24" id="tQV-0D-f6J"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwf-1w-mdr">
+                                <rect key="frame" x="39" y="6.6666666666666732" width="378" height="19.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                <color key="textColor" name="outerSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="09U-sj-nMC">
+                                <rect key="frame" x="432" y="0.0" width="35" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="h0H-sb-bRa"/>
+                                    <constraint firstAttribute="height" constant="33" id="nXd-bd-dIg"/>
+                                </constraints>
+                                <color key="onTintColor" name="ultramarineBlue"/>
+                                <connections>
+                                    <action selector="autolockSwithcerChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="AW2-Dv-pFC"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BWb-cT-gOd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="mvk-Ak-XVS"/>
+                    <constraint firstAttribute="trailing" secondItem="BWb-cT-gOd" secondAttribute="trailing" constant="25" id="qaB-XT-SMC"/>
+                    <constraint firstItem="BWb-cT-gOd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uGV-fV-DCy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="autolockSwitcher" destination="09U-sj-nMC" id="xE3-2i-ehk"/>
+                <outlet property="iconImageView" destination="Af7-xC-RdK" id="kMs-Uq-3bz"/>
+                <outlet property="titleLabel" destination="Jwf-1w-mdr" id="bBM-Ka-Uye"/>
+            </connections>
+            <point key="canvasLocation" x="278.62595419847327" y="61.619718309859159"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="lock" width="24" height="24"/>
+        <namedColor name="outerSpace">
+            <color red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ultramarineBlue">
+            <color red="0.29803921568627451" green="0.43529411764705883" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

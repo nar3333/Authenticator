@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRScannerViewController" customModule="Authenticator" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uqp-1j-0i9">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ja8-Nk-g9M">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" red="0.0" green="0.031372549019607843" blue="0.18431372549019609" alpha="0.75" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FaQ-SH-FnM">
+                    <rect key="frame" x="16" y="64" width="361" height="37"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLO-Tj-w8D">
+                            <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="FbY-1z-ka1"/>
+                                <constraint firstAttribute="width" constant="37" id="XLy-Uq-Bfk"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="back_button_white"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan QR code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUf-xh-dtI">
+                            <rect key="frame" x="47" y="9.3333333333333268" width="267" height="18.333333333333329"/>
+                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSD-Bu-B2x">
+                            <rect key="frame" x="324" y="0.0" width="37" height="37"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="Hfu-1q-Apo"/>
+                                <constraint firstAttribute="width" constant="37" id="mYI-PK-8Cx"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="flash"/>
+                        </button>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan the QR code to add an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJ1-z7-yf8">
+                    <rect key="frame" x="95.000000000000014" y="213" width="203.33333333333337" height="15.666666666666657"/>
+                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrtarget" translatesAutoresizingMaskIntoConstraints="NO" id="RPX-6d-E7d">
+                    <rect key="frame" x="52" y="281.66666666666669" width="289" height="289.00000000000006"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="RPX-6d-E7d" secondAttribute="height" multiplier="1:1" id="yjt-FH-QL2"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ja8-Nk-g9M" firstAttribute="leading" secondItem="Uqp-1j-0i9" secondAttribute="leading" id="0ag-JO-UYQ"/>
+                <constraint firstItem="ja8-Nk-g9M" firstAttribute="trailing" secondItem="Uqp-1j-0i9" secondAttribute="trailing" id="3RX-n8-J5I"/>
+                <constraint firstItem="ja8-Nk-g9M" firstAttribute="bottom" secondItem="Uqp-1j-0i9" secondAttribute="bottom" id="AXt-yp-PWO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FaQ-SH-FnM" secondAttribute="trailing" constant="16" id="EHf-xJ-dQf"/>
+                <constraint firstItem="Uqp-1j-0i9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GiB-hy-hAq"/>
+                <constraint firstItem="EJ1-z7-yf8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RWJ-H7-b53"/>
+                <constraint firstItem="RPX-6d-E7d" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="UXY-jN-wo8"/>
+                <constraint firstItem="RPX-6d-E7d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="52" id="YAc-z4-Cel"/>
+                <constraint firstItem="EJ1-z7-yf8" firstAttribute="bottom" secondItem="RPX-6d-E7d" secondAttribute="top" constant="-53" id="cbi-qf-N7b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RPX-6d-E7d" secondAttribute="trailing" constant="52" id="d4Y-Kx-FSc"/>
+                <constraint firstItem="FaQ-SH-FnM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="gXe-OP-NY7"/>
+                <constraint firstAttribute="trailing" secondItem="Uqp-1j-0i9" secondAttribute="trailing" id="iup-c8-9iO"/>
+                <constraint firstItem="FaQ-SH-FnM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="owO-q5-lsf"/>
+                <constraint firstItem="Uqp-1j-0i9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pKU-Lc-A93"/>
+                <constraint firstItem="ja8-Nk-g9M" firstAttribute="top" secondItem="Uqp-1j-0i9" secondAttribute="top" id="r8d-Tp-2Go"/>
+                <constraint firstAttribute="bottom" secondItem="Uqp-1j-0i9" secondAttribute="bottom" id="xEx-Vn-Qdb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="50" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_button_white" width="37" height="37"/>
+        <image name="flash" width="37" height="37"/>
+        <image name="qrtarget" width="273" height="282"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
