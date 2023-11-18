@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,7 +31,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 
+extension UIWindow {
+    static var key: UIWindow! {
+        let scene = UIApplication.shared.connectedScenes.first
+        let windowScene = scene as? UIWindowScene
+        let window = windowScene?.windows.first
+        return window
+        
+//        if #available(iOS 13, *) {
+//            return UIApplication.shared.windows.first { $0.isKeyWindow }
+//        } else {
+//            return UIApplication.shared.keyWindow
+//        }
+    }
+}
+
+extension SKStoreReviewController {
+    public static func requestReviewInCurrentScene() {
+        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            DispatchQueue.main.async {
+                requestReview(in: scene)
+            }
+        }
+    }
+}

@@ -19,6 +19,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRScannerViewController" customModule="Authenticator" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="JLO-Tj-w8D" id="bBE-nG-hnd"/>
+                <outlet property="flashButton" destination="sSD-Bu-B2x" id="ghy-MM-tPS"/>
+                <outlet property="scannerView" destination="Uqp-1j-0i9" id="00G-Ue-kh5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,7 +32,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uqp-1j-0i9">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ja8-Nk-g9M">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -46,6 +49,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="back_button_white"/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="Rkb-HF-KF9"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan QR code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUf-xh-dtI">
                             <rect key="frame" x="47" y="9.3333333333333268" width="267" height="18.333333333333329"/>
@@ -61,6 +67,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="flash"/>
+                            <connections>
+                                <action selector="flashAction:" destination="-1" eventType="touchUpInside" id="Hl1-QU-YT7"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

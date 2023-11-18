@@ -8,10 +8,15 @@
 import UIKit
 
 class ImageCell: UICollectionViewCell {
+    static let id = "ImageCell"
 
+    @IBOutlet weak var onboardImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    func setImage(name: String) {
+        self.onboardImageView.image = UIImage(named: name)
     }
 
 }

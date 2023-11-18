@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+extension Date {
+    func seconds() -> Int {
+        let calendar = Calendar.current
+        let component = calendar.component(.second, from: self)
+        return component
+    }
+}

@@ -1,0 +1,169 @@
+{
+  "identifier" : "41214108",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "F4B53535",
+      "localizations" : [
+
+      ],
+      "name" : "AuthProducts",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+            {
+              "internalID" : "4923DA3D",
+              "offerID" : "com.narekghukasyan.Authenticator.week",
+              "paymentMode" : "free",
+              "referenceName" : "com.narekghukasyan.Authenticator.week",
+              "subscriptionPeriod" : "P3D"
+            }
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "969A6BEB",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.narekghukasyan.Authenticator.week",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "com.narekghukasyan.Authenticator.week",
+          "subscriptionGroupID" : "F4B53535",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+            {
+              "internalID" : "63A13F1F",
+              "offerID" : "com.narekghukasyan.Authenticator.month",
+              "paymentMode" : "free",
+              "referenceName" : "com.narekghukasyan.Authenticator.month",
+              "subscriptionPeriod" : "P3D"
+            }
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "11.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "F3F7840E",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.narekghukasyan.Authenticator.month",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "com.narekghukasyan.Authenticator.month",
+          "subscriptionGroupID" : "F4B53535",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+            {
+              "internalID" : "A03AE741",
+              "offerID" : "com.narekghukasyan.Authenticator.year",
+              "paymentMode" : "free",
+              "referenceName" : "com.narekghukasyan.Authenticator.year",
+              "subscriptionPeriod" : "P3D"
+            }
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "29.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "142C7DDB",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.narekghukasyan.Authenticator.year",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "com.narekghukasyan.Authenticator.year",
+          "subscriptionGroupID" : "F4B53535",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

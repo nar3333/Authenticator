@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var purchaseAdView: UIView!
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var upgradeButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
@@ -24,6 +25,8 @@ class SettingsViewController: UIViewController {
         self.settingsTableView.register(UINib(nibName: SettingsCell.id, bundle: nil), forCellReuseIdentifier: SettingsCell.id)
         self.settingsTableView.register(UINib(nibName: SwitchSettingsCell.id, bundle: nil), forCellReuseIdentifier: SwitchSettingsCell.id)
         self.settingsTableView.sectionHeaderTopPadding = 0
+        
+        self.purchaseAdView.isHidden = SubscriptionWrapper.shared.isSubscribed()
     }
     
     
@@ -32,6 +35,9 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func upgradeAction(_ sender: Any) {
+        let vc = SecondaryPaywallViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(vc, animated: true)
     }
     
     /*
@@ -87,11 +93,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        30
+        20
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView.init(frame: CGRectMake(0, 0, tableView.bounds.size.width, 30))
+        let headerView = UIView.init(frame: CGRectMake(0, 0, tableView.bounds.size.width, 20))
         let lblHeader = UILabel.init(frame: CGRectMake(15, 0, tableView.bounds.size.width - 10, 20))
         
         switch section {
@@ -112,5 +118,30 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         77
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                print("Something")
+            case 1:
+                if SubscriptionWrapper.shared.isSubscribed() {
+                    let vc = PassCodeViewController()
+                    vc.passState = .create
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    showPurchaseView()
+                }
+            default:
+                print("Something")
+            }
+        }
+    }
+    
+    private func showPurchaseView() {
+        let vc = MainPaywallViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(vc, animated: true)
     }
 }

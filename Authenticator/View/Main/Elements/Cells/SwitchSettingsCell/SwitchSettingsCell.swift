@@ -18,13 +18,15 @@ class SwitchSettingsCell: UITableViewCell {
         separatorInset.left = 15
         separatorInset.right = 15
         selectionStyle = .none
+        self.autolockSwitcher.isOn = AppDataManager.enablePassCode
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    @IBAction func autolockSwithcerChanged(_ sender: Any) {
+    @IBAction func autolockSwithcerChanged(_ sender: UISwitch) {
+        AppDataManager.enablePassCode = sender.isOn
     }
     
     func setItem(_ item: SettingsModel) {

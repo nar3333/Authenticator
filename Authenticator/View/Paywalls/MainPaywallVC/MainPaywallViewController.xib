@@ -1,22 +1,319 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HKGrotesk-Medium.ttf">
+            <string>HKGrotesk-Medium</string>
+        </array>
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainPaywallViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainPaywallViewController" customModule="Authenticator" customModuleProvider="target">
             <connections>
+                <outlet property="closeButton" destination="v72-rX-PTp" id="loY-Dr-Zsv"/>
+                <outlet property="monthCheckMark" destination="x8i-qt-B6z" id="K7E-mP-74e"/>
+                <outlet property="monthStackContainer" destination="oKR-go-S85" id="ThY-EL-Exf"/>
+                <outlet property="monthSubtitleLabel" destination="H4M-fH-jQh" id="DE9-gU-f9I"/>
+                <outlet property="monthTitleLabel" destination="Jsu-bi-mbO" id="JIl-ED-vrK"/>
+                <outlet property="policyButton" destination="c6u-je-dLQ" id="rhD-vn-GiE"/>
+                <outlet property="restoreButton" destination="pCD-lh-lqB" id="UWZ-uB-3NG"/>
+                <outlet property="subscribeButton" destination="VEM-dZ-wU9" id="6ae-Pr-Lfu"/>
+                <outlet property="termsButton" destination="6Og-qn-RQd" id="Qla-pe-G2A"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weekCheckMark" destination="yc6-Jj-7Vb" id="UH4-xs-vSG"/>
+                <outlet property="weekStackContainer" destination="e6t-RR-s5T" id="QuK-5R-ThQ"/>
+                <outlet property="weekSubtitleLabel" destination="MAL-W6-5Dz" id="dLN-6H-hOZ"/>
+                <outlet property="weekTitleLabel" destination="5Ff-W1-hTg" id="Lae-20-RgK"/>
+                <outlet property="yearCheckMark" destination="oH4-Rr-4Gd" id="ugr-yb-qK8"/>
+                <outlet property="yearStackContainer" destination="qPJ-Cm-9It" id="kML-z3-kiV"/>
+                <outlet property="yearSubtitleLabel" destination="fDs-X2-0q9" id="PY8-xo-QiX"/>
+                <outlet property="yearTitleLabel" destination="Oo5-Hg-OlA" id="rMf-rW-pug"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paywall_icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="bbc-gu-fsY">
+                    <rect key="frame" x="62.666666666666657" y="64" width="268" height="220"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="bbc-gu-fsY" secondAttribute="height" multiplier="268:220" id="7Zu-O5-ayf"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paywall_icon_2" translatesAutoresizingMaskIntoConstraints="NO" id="skE-70-kNB">
+                    <rect key="frame" x="22" y="299" width="349" height="132"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="skE-70-kNB" secondAttribute="height" multiplier="330:130" id="F6L-DE-Yb6"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="247" verticalCompressionResistancePriority="752" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="leD-fb-tg9">
+                    <rect key="frame" x="15" y="441.00000000000006" width="363" height="221.66666666666669"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="FxD-cc-vsI">
+                            <rect key="frame" x="0.0" y="0.0" width="363" height="221.66666666666666"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="oKR-go-S85">
+                                    <rect key="frame" x="0.0" y="0.0" width="363" height="69.666666666666671"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_on" translatesAutoresizingMaskIntoConstraints="NO" id="x8i-qt-B6z">
+                                            <rect key="frame" x="18" y="25.333333333333314" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="H3K-Yq-FVT"/>
+                                                <constraint firstAttribute="width" constant="24" id="LNJ-B6-Heq"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T0l-GX-BfL">
+                                            <rect key="frame" x="54" y="18.999999999999996" width="301" height="36.666666666666657"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$11.99 per month" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsu-bi-mbO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="301" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="15"/>
+                                                    <color key="textColor" name="outerSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 days free trial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4M-fH-jQh">
+                                                    <rect key="frame" x="0.0" y="21" width="301" height="15.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="x8i-qt-B6z" firstAttribute="top" secondItem="oKR-go-S85" secondAttribute="top" constant="25.333333333333314" id="gQJ-1h-OBk"/>
+                                    </constraints>
+                                    <edgeInsets key="layoutMargins" top="17" left="18" bottom="12" right="8"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusInspec">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="e6t-RR-s5T">
+                                    <rect key="frame" x="0.0" y="75.666666666666686" width="363" height="70.333333333333314"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_off" translatesAutoresizingMaskIntoConstraints="NO" id="yc6-Jj-7Vb">
+                                            <rect key="frame" x="18" y="25.666666666666629" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="L8E-wZ-Ikm"/>
+                                                <constraint firstAttribute="height" constant="24" id="rbQ-ZD-N69"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LON-yy-gdu">
+                                            <rect key="frame" x="54" y="17.000000000000004" width="301" height="41.333333333333343"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4.99 per week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ff-W1-hTg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="301" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="15"/>
+                                                    <color key="textColor" name="outerSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 days free trial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAL-W6-5Dz">
+                                                    <rect key="frame" x="0.0" y="21" width="301" height="20.333333333333329"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.333333333333329" id="3aU-8n-MP9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <edgeInsets key="layoutMargins" top="17" left="18" bottom="12" right="8"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusInspec">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qPJ-Cm-9It">
+                                    <rect key="frame" x="0.0" y="151.99999999999994" width="363" height="69.666666666666686"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_off" translatesAutoresizingMaskIntoConstraints="NO" id="oH4-Rr-4Gd">
+                                            <rect key="frame" x="18" y="25.333333333333371" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="lFm-D3-jZX"/>
+                                                <constraint firstAttribute="height" constant="24" id="yMf-HS-bsD"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0ub-Ck-xwM">
+                                            <rect key="frame" x="54" y="18.999999999999996" width="301" height="36.666666666666657"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$29.99 per year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oo5-Hg-OlA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="301" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="15"/>
+                                                    <color key="textColor" name="outerSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 days free trial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDs-X2-0q9">
+                                                    <rect key="frame" x="0.0" y="21" width="301" height="15.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <edgeInsets key="layoutMargins" top="17" left="18" bottom="12" right="8"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusInspec">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="e6t-RR-s5T" firstAttribute="centerY" secondItem="FxD-cc-vsI" secondAttribute="centerY" id="2sX-dG-NOO"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEM-dZ-wU9">
+                    <rect key="frame" x="39.333333333333343" y="713.66666666666663" width="314.33333333333326" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="SH8-2r-RkI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="13"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Try Free &amp; Subscribe"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusInspec">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="subscribeAction:" destination="-1" eventType="touchUpInside" id="Vkf-C9-8db"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="po9-aa-9Eg">
+                    <rect key="frame" x="78.333333333333329" y="773.66666666666663" width="236.33333333333337" height="62.333333333333371"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v9H-B5-hbU">
+                            <rect key="frame" x="0.0" y="0.0" width="236.33333333333334" height="62.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By clicking to the “Continue” button, you agree to our" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1u6-Fe-Jo7">
+                                    <rect key="frame" x="0.0" y="0.0" width="236.33333333333334" height="12.333333333333334"/>
+                                    <fontDescription key="fontDescription" name="HKGrotesk-Medium" family="HK Grotesk" pointSize="10"/>
+                                    <color key="textColor" name="graygray"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GRD-MR-B0z">
+                                    <rect key="frame" x="46" y="12.333333333333371" width="144.66666666666666" height="25"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Og-qn-RQd">
+                                            <rect key="frame" x="0.0" y="0.0" width="57" height="25"/>
+                                            <fontDescription key="fontDescription" name="HKGrotesk-Medium" family="HK Grotesk" pointSize="10"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Terms of use">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="termsAction:" destination="-1" eventType="touchUpInside" id="KBN-Zx-pIs"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="and" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owl-x1-nwH">
+                                            <rect key="frame" x="62.000000000000007" y="6.3333333333333721" width="16.666666666666664" height="12.333333333333336"/>
+                                            <fontDescription key="fontDescription" name="HKGrotesk-Medium" family="HK Grotesk" pointSize="10"/>
+                                            <color key="textColor" name="graygray"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6u-je-dLQ">
+                                            <rect key="frame" x="83.666666666666671" y="0.0" width="61.000000000000014" height="25"/>
+                                            <fontDescription key="fontDescription" name="HKGrotesk-Medium" family="HK Grotesk" pointSize="10"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Privacy Policy">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="policyAction:" destination="-1" eventType="touchUpInside" id="OYd-6i-HaZ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCD-lh-lqB">
+                                    <rect key="frame" x="101.33333333333333" y="37.333333333333371" width="33.999999999999986" height="25"/>
+                                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                    <fontDescription key="fontDescription" name="HKGrotesk-Medium" family="HK Grotesk" pointSize="10"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Restore">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="restoreAction:" destination="-1" eventType="touchUpInside" id="2XF-09-Nux"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v72-rX-PTp">
+                    <rect key="frame" x="10" y="69" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="0ki-ye-ui3"/>
+                        <constraint firstAttribute="height" constant="24" id="te0-pJ-ztF"/>
+                    </constraints>
+                    <color key="tintColor" name="graygray"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="xmark" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                    </state>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="WUh-Et-9Km"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.29803921568627451" green="0.43529411764705883" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="skE-70-kNB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="22" id="0Sq-6E-prB"/>
+                <constraint firstItem="bbc-gu-fsY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2gC-eZ-z4U"/>
+                <constraint firstItem="skE-70-kNB" firstAttribute="top" secondItem="bbc-gu-fsY" secondAttribute="bottom" constant="15" id="5aH-fH-3yh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="leD-fb-tg9" secondAttribute="trailing" constant="15" id="Dl7-3B-nFe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="skE-70-kNB" secondAttribute="trailing" constant="22" id="Nzq-C8-39y"/>
+                <constraint firstItem="VEM-dZ-wU9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PcK-Ph-k35"/>
+                <constraint firstItem="v72-rX-PTp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="QgV-Rf-vWz"/>
+                <constraint firstItem="skE-70-kNB" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="Xax-VX-E8E"/>
+                <constraint firstItem="bbc-gu-fsY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="ZpI-Xd-ZOX"/>
+                <constraint firstItem="leD-fb-tg9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="a5Z-n3-ofV"/>
+                <constraint firstItem="po9-aa-9Eg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="c6S-fi-Y9F"/>
+                <constraint firstItem="leD-fb-tg9" firstAttribute="top" secondItem="skE-70-kNB" secondAttribute="bottom" constant="10" id="jKo-xh-RKL"/>
+                <constraint firstItem="bbc-gu-fsY" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.25" id="p20-aS-GxJ"/>
+                <constraint firstItem="v72-rX-PTp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="qzp-hW-psx"/>
+                <constraint firstItem="VEM-dZ-wU9" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="wGx-4U-7gh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="po9-aa-9Eg" secondAttribute="bottom" constant="10" id="zaf-Nz-bCG"/>
+                <constraint firstItem="po9-aa-9Eg" firstAttribute="top" secondItem="VEM-dZ-wU9" secondAttribute="bottom" constant="10" id="zf0-0o-QRm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
         </view>
     </objects>
+    <resources>
+        <image name="checkmark_off" width="24" height="24"/>
+        <image name="checkmark_on" width="24" height="24"/>
+        <image name="paywall_icon_1" width="268" height="220"/>
+        <image name="paywall_icon_2" width="330" height="130"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="graygray">
+            <color red="0.72941176470588232" green="0.72941176470588232" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="outerSpace">
+            <color red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
