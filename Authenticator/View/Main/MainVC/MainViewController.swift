@@ -66,11 +66,11 @@ class MainViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
-//    @objc func timerAction() {
-//        main {
-//            self.accountCollection.reloadData()
-//        }
-//    }
+    //    @objc func timerAction() {
+    //        main {
+    //            self.accountCollection.reloadData()
+    //        }
+    //    }
     
     @objc func timerAction() {
         timeCounter += 1.0
@@ -117,7 +117,7 @@ class MainViewController: UIViewController {
             self.backgroundView.removeFromSuperview()
         }
     }
-
+    
     @IBAction func plusAction(_ sender: Any) {
         if SubscriptionWrapper.shared.isSubscribed() {
             self.showNewAccountAlert()
@@ -217,7 +217,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         alertVC.addAction(deleteAction)
         alertVC.addAction(cancelAction)
-        self.present(alertVC, animated: true)
+        main {
+            self.present(alertVC, animated: true)
+        }
     }
 }
 
@@ -234,51 +236,61 @@ extension MainViewController: PHPickerViewControllerDelegate {
         picker.dismiss(animated: true)
         
         let result = results.first
-        result?.itemProvider.loadObject(ofClass: UIImage.self, completionHandler: { object, error in
-            if let image = object as? UIImage {
-                self.proccessImageToGetQR(image)
+        result?.itemProvider.loadObject(ofClass: UIImage.self, completionHandler: { [weak self] object, error in
+            guard let self = self, let image = object as? UIImage else {
+                return
+            }
+            
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                guard let self else {return}
+                self.processImageToGetQR(image)
             }
         })
     }
     
-    private func proccessImageToGetQR(_ image: UIImage) {
-        if let qrCodeString = detectQRCode(image: image) {
-            guard let url = URL(string: qrCodeString),
-                let token = Token(url: url) else {
-                    // Show an error message
+    private func processImageToGetQR(_ image: UIImage) {
+        
+        guard let qrCodeString = detectQRCode(image: image) else {
+            main {
+                self.showAlert(title: "Failure", message: "No QR code found in the image.")
+            }
+            return
+        }
+        guard let url = URL(string: qrCodeString),
+              let token = Token(url: url) else {
+            // Show an error message
+            main {
                 self.showAlert(message: "Invalid Token")
-                return
             }
-            
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            let store = OTPManager.shared.getStore()
-            do {
-                try store.addToken(token)
-                main {
-                    self.setupData()
-                    self.accountCollection.reloadData()
-                }
-            } catch {
-                self.showAlert(title: "Something went wrong..", message: "Please, try later!")
+            return
+        }
+        
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        let store = OTPManager.shared.getStore()
+        do {
+            try store.addToken(token)
+            main {
+                self.setupData()
+                self.accountCollection.reloadData()
             }
-        } else {
-            self.showAlert(title: "Failure", message: "No QR code found in the image.")
+        } catch {
+            self.showAlert(title: "Something went wrong..", message: "Please, try later!")
         }
     }
     
     func detectQRCode(image: UIImage) -> String? {
         guard let ciImage = CIImage(image: image) else { return nil }
-
+        
         let options: [String: Any] = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
         let context = CIContext()
-
+        
         if let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: options),
            let feature = detector.features(in: ciImage).first as? CIQRCodeFeature,
            let messageString = feature.messageString {
-
+            
             return messageString
         }
-
+        
         return nil
     }
     

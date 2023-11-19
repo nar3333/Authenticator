@@ -95,7 +95,8 @@ class MainPaywallViewController: UIViewController {
     }
     
     @IBAction func restoreAction(_ sender: Any) {
-        SubscriptionWrapper.shared.restore { completed in
+        SubscriptionWrapper.shared.restore { [weak self] completed in
+            guard let self else { return }
             if !completed {
                 self.showAlert(title: "Something went wrong..", message: "Please, try later!")
             } else {
